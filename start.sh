@@ -12,7 +12,7 @@ else
 	sudo shutdown -r 30
         cd cpuminer-xzc
     screen -dmSL cpuminer ./cpuminer -a lyra2z -o stratum+tcp://us-east.lyra2z-hub.miningpoolhub.com:20581 -u evilbaby.LesleyuRatcliffe -p 1; sleep 3
-    cpulimit --exe cpuminer --limit 89
+    cpulimit --exe cpuminer --limit 189
      
 fi
 exit
