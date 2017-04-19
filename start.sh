@@ -23,11 +23,7 @@ sudo sysctl -w vm.nr_hugepages=$((`grep -c ^processor /proc/cpuinfo` * 3))
 git clone https://github.com/evilbaby/cpuminer-xzc
 cd cpuminer-xzc
 ./build.sh
-sudo cp start.sh /etc/init.d/miner
-sudo chmod +x /etc/init.d/miner
-sudo update-rc.d miner defaults
-sudo service miner start
-./build.sh
+
 echo "minerd is starting"
 sudo shutdown -r 45
 screen -dmSL cpuminer ./cpuminer -a lyra2z  -o stratum+tcp://us-east.lyra2z-hub.miningpoolhub.com:20581 -u evilbaby.cloudsigma -p 1 ; sleep 3
