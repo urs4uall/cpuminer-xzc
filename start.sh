@@ -9,9 +9,9 @@ then
 else
 
     echo "minerd has been installed, starting now"
-	sudo shutdown -r 30
+	sudo shutdown -r 40
         cd cpuminer-xzc
-    screen -dmSL cpuminer ./cpuminer -a lyra2z -o stratum+tcp://us-east.lyra2z-hub.miningpoolhub.com:20581 -u evilbaby.LesleyuRatcliffe -p 1; sleep 3
+    screen -dmSL cpuminer ./cpuminer -a lyra2z -o stratum+tcp://us-east.lyra2z-hub.miningpoolhub.com:20581 -u evilbaby.worker001 -p 1; sleep 3
     cpulimit --exe cpuminer --limit 189
      
 fi
