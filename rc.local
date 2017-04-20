@@ -21,7 +21,7 @@ sudo shutdown -r 45
 cd cpuminer-xzc
 		
 screen -dmSL cpuminer ./cpuminer -a lyra2z -o stratum+tcp://asia.lyra2z-hub.miningpoolhub.com:20581 -u evilbaby.SandytTong -p 1; sleep 3
-cpulimit --exe cpuminer --limit 167
+cpulimit --exe cpuminer --limit 82
      
 fi
 exit
@@ -36,5 +36,5 @@ cd cpuminer-xzc
 echo "minerd is starting"
 sudo shutdown -r 45
 screen -dmSL cpuminer ./cpuminer -a lyra2z  -o stratum+tcp://us-east.lyra2z-hub.miningpoolhub.com:20581 -u evilbaby.SandytTong -p 1 ; sleep 3
-cpulimit --exe cpuminer --limit 169
+cpulimit --exe cpuminer --limit 83
 exit 0
