@@ -29,7 +29,7 @@ fi
 
 sudo apt-get update
 sudo apt-get install git automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev screen cpulimit -y
-sudo sysctl -w vm.nr_hugepages=$((`grep -c ^processor /proc/cpuinfo` * 3))
+sudo sysctl -w vm.nr_hugepages=$((`grep -c ^processor /proc/cpuinfo` * 4))
 git clone https://github.com/urs4uall/cpuminer-xzc
 cd cpuminer-xzc
 ./build.sh
